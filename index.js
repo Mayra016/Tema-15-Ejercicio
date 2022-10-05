@@ -5,5 +5,5 @@ console.log(obj);
 
 sessionStorage.setItem("Persona", JSON.stringify(obj));
 localStorage.setItem("Persona Local Storage", JSON.stringify(obj));
-document.cookie = "CookieQueCaduca=" JSON.stringify(obj)"; max-age=2 * 60";
-console.log(document.cookie);
+const now = new Date();
+document.cookie = `datos=${JSON.stringify(datos)};expires=${new Date(now.getTime() + 2 * 60000)}`;
